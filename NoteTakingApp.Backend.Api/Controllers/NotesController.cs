@@ -5,6 +5,7 @@ using NoteTakingApp.Backend.Application.Features.Note.Commands.DeleteNote;
 using NoteTakingApp.Backend.Application.Features.Note.Commands.UpdateNote;
 using NoteTakingApp.Backend.Application.Features.Note.Queries.GetAllNotes;
 using NoteTakingApp.Backend.Application.Features.Note.Queries.GetNoteById;
+using NoteTakingApp.Backend.Application.Features.Note.Queries.SearchNotes;
 using NoteTakingApp.Backend.Application.Features.Note.Shared;
 
 namespace NoteTakingApp.Backend.Api.Controllers
@@ -20,7 +21,7 @@ namespace NoteTakingApp.Backend.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("get-all")]
+        [HttpGet]
         public async Task<List<NoteDto>> Get()
         {
             return await _mediator.Send(new GetAllNotesQuery());
@@ -32,11 +33,18 @@ namespace NoteTakingApp.Backend.Api.Controllers
         //    return await _mediator.Send(new Get(employeeId));
         //}
 
-        [HttpGet("{id}/get-by-id")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<NoteDto>> Get(int id)
         {
             var note = await _mediator.Send(new GetNoteByIdQuery(id));
             return Ok(note);
+        }
+
+        [HttpGet("{searchText}/search")]
+        public async Task<ActionResult<List<NoteDto>>> Search(string searchText)
+        {
+            var notes =  await _mediator.Send(new SearchNotesQuery(searchText));
+            return Ok(notes);
         }
 
         //[HttpGet("{employeeId}/get-count-by-employee-id")]

@@ -1,4 +1,5 @@
-﻿using NoteTakingApp.Backend.Application.Contracts.Persistence;
+﻿using Microsoft.EntityFrameworkCore;
+using NoteTakingApp.Backend.Application.Contracts.Persistence;
 using NoteTakingApp.Backend.Domain.Notes;
 using NoteTakingApp.Backend.Persistence.DatabaseContext;
 using NoteTakingApp.Backend.Persistence.Repositories.Common;
@@ -7,13 +8,14 @@ namespace NoteTakingApp.Backend.Persistence.Repositories
 {
     public class NoteRepository : GenericRepository<Note>, INoteRepository
     {
-        public NoteRepository(ApplicationDatabaseContext context) : base(context)
-        {
-        }
+        public NoteRepository(ApplicationDatabaseContext context) : base(context) { }
 
-        public async Task<List<Note>> GetNotesByUserId(int userId)
+        public async Task<List<Note>> SearchNotes(string searchText)
         {
-            throw new NotImplementedException();
+            return await _context.Notes
+                .Where(n => n.Title.ToLower().Contains(searchText.ToLower()) ||
+                       n.Content.ToLower().Contains(searchText.ToLower()))
+                .ToListAsync();
         }
     }
 }

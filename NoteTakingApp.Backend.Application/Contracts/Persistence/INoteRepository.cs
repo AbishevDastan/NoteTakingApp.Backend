@@ -5,6 +5,6 @@ namespace NoteTakingApp.Backend.Application.Contracts.Persistence
 {
     public interface INoteRepository : IGenericRepository<Note>
     {
-        Task<List<Note>> GetNotesByUserId(int userId);
+        Task<List<Note>> SearchNotes(string searchText);
     }
 }
