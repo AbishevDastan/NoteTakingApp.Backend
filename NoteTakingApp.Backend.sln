@@ -1,0 +1,81 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteTakingApp.Backend.Api", "NoteTakingApp.Backend.Api\NoteTakingApp.Backend.Api.csproj", "{81621817-EAA0-42BE-96E5-3BF2925BBA7D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1C322AC1-C430-4016-B34D-FE6012160F4E} = {1C322AC1-C430-4016-B34D-FE6012160F4E}
+		{43C19778-F729-453E-BA52-047C59A124FB} = {43C19778-F729-453E-BA52-047C59A124FB}
+		{CD2A7FC2-CEA9-4480-9D72-56965CF209BD} = {CD2A7FC2-CEA9-4480-9D72-56965CF209BD}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F89EAE53-B46B-4825-ADD0-EEB904AD075F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{A16A34CE-508E-4A4E-B9C3-C282821E56D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{206C5F6A-F361-46D3-932D-AFBD732097D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{774524E3-D7F6-4954-ABEA-20F06D45DEE4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteTakingApp.Backend.Domain", "NoteTakingApp.Backend.Domain\NoteTakingApp.Backend.Domain.csproj", "{40495A25-EC6B-4805-BCFB-ACFA7FE87691}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteTakingApp.Backend.Application", "NoteTakingApp.Backend.Application\NoteTakingApp.Backend.Application.csproj", "{CD2A7FC2-CEA9-4480-9D72-56965CF209BD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{40495A25-EC6B-4805-BCFB-ACFA7FE87691} = {40495A25-EC6B-4805-BCFB-ACFA7FE87691}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteTakingApp.Backend.Infrastructure", "NoteTakingApp.Backend.Infrastructure\NoteTakingApp.Backend.Infrastructure.csproj", "{43C19778-F729-453E-BA52-047C59A124FB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CD2A7FC2-CEA9-4480-9D72-56965CF209BD} = {CD2A7FC2-CEA9-4480-9D72-56965CF209BD}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteTakingApp.Backend.Persistence", "NoteTakingApp.Backend.Persistence\NoteTakingApp.Backend.Persistence.csproj", "{1C322AC1-C430-4016-B34D-FE6012160F4E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CD2A7FC2-CEA9-4480-9D72-56965CF209BD} = {CD2A7FC2-CEA9-4480-9D72-56965CF209BD}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81621817-EAA0-42BE-96E5-3BF2925BBA7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81621817-EAA0-42BE-96E5-3BF2925BBA7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81621817-EAA0-42BE-96E5-3BF2925BBA7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81621817-EAA0-42BE-96E5-3BF2925BBA7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40495A25-EC6B-4805-BCFB-ACFA7FE87691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40495A25-EC6B-4805-BCFB-ACFA7FE87691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40495A25-EC6B-4805-BCFB-ACFA7FE87691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40495A25-EC6B-4805-BCFB-ACFA7FE87691}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD2A7FC2-CEA9-4480-9D72-56965CF209BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD2A7FC2-CEA9-4480-9D72-56965CF209BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD2A7FC2-CEA9-4480-9D72-56965CF209BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD2A7FC2-CEA9-4480-9D72-56965CF209BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43C19778-F729-453E-BA52-047C59A124FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43C19778-F729-453E-BA52-047C59A124FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43C19778-F729-453E-BA52-047C59A124FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43C19778-F729-453E-BA52-047C59A124FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C322AC1-C430-4016-B34D-FE6012160F4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C322AC1-C430-4016-B34D-FE6012160F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C322AC1-C430-4016-B34D-FE6012160F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C322AC1-C430-4016-B34D-FE6012160F4E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{81621817-EAA0-42BE-96E5-3BF2925BBA7D} = {A16A34CE-508E-4A4E-B9C3-C282821E56D2}
+		{A16A34CE-508E-4A4E-B9C3-C282821E56D2} = {F89EAE53-B46B-4825-ADD0-EEB904AD075F}
+		{206C5F6A-F361-46D3-932D-AFBD732097D2} = {F89EAE53-B46B-4825-ADD0-EEB904AD075F}
+		{774524E3-D7F6-4954-ABEA-20F06D45DEE4} = {F89EAE53-B46B-4825-ADD0-EEB904AD075F}
+		{40495A25-EC6B-4805-BCFB-ACFA7FE87691} = {206C5F6A-F361-46D3-932D-AFBD732097D2}
+		{CD2A7FC2-CEA9-4480-9D72-56965CF209BD} = {206C5F6A-F361-46D3-932D-AFBD732097D2}
+		{43C19778-F729-453E-BA52-047C59A124FB} = {774524E3-D7F6-4954-ABEA-20F06D45DEE4}
+		{1C322AC1-C430-4016-B34D-FE6012160F4E} = {774524E3-D7F6-4954-ABEA-20F06D45DEE4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0BDC4644-9744-4CC3-9C2A-C4A0C8E8DF18}
+	EndGlobalSection
+EndGlobal
