@@ -5,6 +5,7 @@ using NoteTakingApp.Backend.Application.Features.Note.Commands.DeleteNote;
 using NoteTakingApp.Backend.Application.Features.Note.Commands.UpdateNote;
 using NoteTakingApp.Backend.Application.Features.Note.Queries.GetAllNotes;
 using NoteTakingApp.Backend.Application.Features.Note.Queries.GetNoteById;
+using NoteTakingApp.Backend.Application.Features.Note.Queries.GetNotesByCategoryId;
 using NoteTakingApp.Backend.Application.Features.Note.Queries.SearchNotes;
 using NoteTakingApp.Backend.Application.Features.Note.Shared;
 
@@ -27,11 +28,11 @@ namespace NoteTakingApp.Backend.Api.Controllers
             return await _mediator.Send(new GetAllNotesQuery());
         }
 
-        //[HttpGet("{employeeId}/get-by-employee-id")]
-        //public async Task<List<NoteDto>> GetByEmployeeId(int employeeId)
-        //{
-        //    return await _mediator.Send(new Get(employeeId));
-        //}
+        [HttpGet("{categoryId}/get-by-category-id")]
+        public async Task<List<NoteDto>> GetNotesByCategoryId(int categoryId)
+        {
+            return await _mediator.Send(new GetNotesByCategoryIdQuery(categoryId));
+        }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<NoteDto>> Get(int id)

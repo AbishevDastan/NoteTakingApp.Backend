@@ -10,10 +10,12 @@ namespace NoteTakingApp.Backend.Persistence.Repositories
     {
         public NoteRepository(ApplicationDatabaseContext context) : base(context) { }
 
-        //public Task<List<Note>> GetNotesByCategoryId(int categoryId)
-        //{
-        //    return awai
-        //}
+        public async Task<List<Note>> GetNotesByCategoryId(int categoryId)
+        {
+            return await _context.Notes
+                .Where(n => n.CategoryId == categoryId)
+                .ToListAsync();
+        }
 
         public async Task<List<Note>> SearchNotes(string searchText)
         {
