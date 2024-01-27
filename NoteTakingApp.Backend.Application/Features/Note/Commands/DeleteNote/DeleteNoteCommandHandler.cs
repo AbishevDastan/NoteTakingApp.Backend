@@ -3,11 +3,11 @@ using NoteTakingApp.Backend.Application.Contracts.Persistence;
 
 namespace NoteTakingApp.Backend.Application.Features.Note.Commands.DeleteNote
 {
-    public class DeleteNodeCommandHandler : IRequestHandler<DeleteNoteCommand, Unit>
+    public class DeleteNoteCommandHandler : IRequestHandler<DeleteNoteCommand, Unit>
     {
         private readonly INoteRepository _noteRepository;
 
-        public DeleteNodeCommandHandler(INoteRepository noteRepository)
+        public DeleteNoteCommandHandler(INoteRepository noteRepository)
         {
             _noteRepository = noteRepository;
         }

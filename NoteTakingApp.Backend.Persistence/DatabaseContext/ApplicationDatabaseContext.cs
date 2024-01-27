@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using NoteTakingApp.Backend.Domain.Categories;
 using NoteTakingApp.Backend.Domain.Notes;
 
 namespace NoteTakingApp.Backend.Persistence.DatabaseContext
@@ -8,6 +9,7 @@ namespace NoteTakingApp.Backend.Persistence.DatabaseContext
         public ApplicationDatabaseContext(DbContextOptions<ApplicationDatabaseContext> options) : base(options) { }
 
         public DbSet<Note> Notes { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -12,7 +12,8 @@ namespace NoteTakingApp.Backend.Application.Mapping
             var result = new Note
             {
                 Title = dto.Title,
-                Content = dto.Content
+                Content = dto.Content,
+                CategoryId = dto.CategoryId
             };
             return result;
         }
@@ -23,7 +24,8 @@ namespace NoteTakingApp.Backend.Application.Mapping
             {
                 Id = dto.Id,
                 Title = dto.Title,
-                Content = dto.Content
+                Content = dto.Content,
+                CategoryId = dto.CategoryId
             };
             return result;
         }
@@ -34,7 +36,9 @@ namespace NoteTakingApp.Backend.Application.Mapping
             {
                 Id = entity.Id,
                 Title = entity.Title,
-                Content = entity.Content
+                Content = entity.Content,
+                CategoryId = entity.CategoryId
+
             };
             return result;
         }
@@ -45,7 +49,8 @@ namespace NoteTakingApp.Backend.Application.Mapping
             {
                 Id = dto.Id,
                 Title = dto.Title,
-                Content = dto.Content
+                Content = dto.Content,
+                CategoryId = dto.CategoryId
             };
             return result;
         }

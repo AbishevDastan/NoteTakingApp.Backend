@@ -18,6 +18,11 @@ namespace NoteTakingApp.Backend.Persistence.Configurations
                 .IsRequired()
                 .HasMaxLength(500);
 
+            builder.HasOne(n => n.Category)
+                .WithMany(c => c.Notes)
+                .HasForeignKey(n => n.CategoryId)
+                .OnDelete(DeleteBehavior.SetNull);
+
             builder.ToTable("Notes");
         }
     }
